@@ -2,7 +2,7 @@
 #include <iostream>
 #include <limits>
 
-#include "complex.hpp"
+#include "math/complex.hpp"
 
 namespace setm {
 

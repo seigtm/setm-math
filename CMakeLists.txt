@@ -6,4 +6,4 @@ conan_basic_setup(TARGETS)
 
 add_executable(SetmMathTest main.cpp)
 target_link_libraries(SetmMathTest PUBLIC CONAN_PKG::SetmMath)
-target_include_directories(SetmMathTest PUBLIC ${CMAKE_CURRENT_LIST_DIR})
+# target_include_directories(SetmMathTest PUBLIC ${CMAKE_CURRENT_LIST_DIR})

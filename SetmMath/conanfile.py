@@ -14,8 +14,9 @@ class SetmMath(ConanFile):
 
     def _configure(self):
         cmake = CMake(self)
+        cmake.verbose = True
         cmake.definitions['CMAKE_BUILD_TYPE'] = "Debug" if self.settings.build_type == "Debug" else "Release"
-        cmake.configure()
+        cmake.configure(source_folder=self.source_folder)
         return cmake
 
     def build(self):
@@ -27,19 +28,11 @@ class SetmMath(ConanFile):
         cmake.install()
 
     def package_info(self):
+        self.cpp_info.includedirs = ["include", "include/setm"]
         if self.settings.os == "Windows":
             if self.settings.compiler == "Visual Studio":
                 self.cpp_info.libs = ["SetmMath.lib"]
             else:
                 self.cpp_info.libs = ["SetmMath.dll"]
         else:
-            self.cpp_info.libs = ["SetmMath.so"]
-
-    # Maybe trash, delete it later:
-    # def package(self):
-    #     self.copy("*")
-    #     cmake = CMake(self)
-    #     cmake.install()
-
-    # def package_info(self):
-    #     self.cpp_info.libs = self.collect_libs()
+            self.cpp_info.libs = ["libSetmMath.so"]

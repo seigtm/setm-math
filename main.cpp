@@ -1,8 +1,9 @@
 #include <iostream>
-// #include <setm/complex>
+#include "math/complex.hpp"
 
-int main(int, char**) {
-    // Здесь будет использование моей прекрасной либы,
-    //  подтянутой из conan-пакета.
-    std::cout << "Hello, world!\n";
+int main() {
+    setm::Complex complex{ 3, 5 };
+    std::cout << complex.getReal() + 2;
+    std::cout << complex << "\n";
+    return 0;
 }
