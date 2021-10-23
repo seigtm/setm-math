@@ -3,7 +3,7 @@ from conans import ConanFile, CMake
 
 class SetmMathTest(ConanFile):
     name = "SetmMathTest"
-    version = "1.0.0"
+    version = "2.0.0"
     author = "Baranov Konstantin (seigtm@gmail.com)"
     description = "Testing setm::math library."
     settings = "os", "compiler", "build_type", "arch"
@@ -11,6 +11,9 @@ class SetmMathTest(ConanFile):
 
     requires = \
         "SetmMath/[~1.0.0]"
+
+    build_requires = \
+        "gtest/[1.11]"
 
     def _configure(self):
         cmake = CMake(self)

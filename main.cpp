@@ -1,9 +1,6 @@
-#include <iostream>
-#include "math/complex.hpp"
+#include <gtest/gtest.h>
 
-int main() {
-    setm::Complex complex{ 3, 5 };
-    std::cout << complex.getReal() + 2;
-    std::cout << complex << "\n";
-    return 0;
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
