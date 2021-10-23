@@ -124,6 +124,7 @@ bash> git clone https://github.com/seigtm/setm-math.git
 To install with `conan`, execute the commands:
 
 1. Install, build and export the setm::math library:
+
    ```bash
    bash> cd SetmMath
    bash> conan install . -if build --build missing
@@ -132,11 +133,18 @@ To install with `conan`, execute the commands:
    bash> conan package ..
    bash> conan export-pkg .. -f
    ```
+
 2. Set up a test project that uses this library and executes several unit tests with `gtest`:
    ```bash
    bash> cd ../..
    bash> conan install . -if build --build missing
    ```
+
+> One-line version:
+>
+> ```bash
+> bash> cd SetmMath && conan install . -if build --build missing && cd build && conan build .. && conan package .. && conan export-pkg .. -f && cd ../.. && conan install . -if build --build missing
+> ```
 
 To build and run the project with `cmake`, execute:
 
