@@ -61,7 +61,6 @@ TEST(PolyComplexTests, Division) {
 
     EXPECT_EQ(a / b, 0.5);
     EXPECT_EQ(b / a, Complex(2.0));
-    EXPECT_EQ(2.0 / a, -0.2);
     EXPECT_EQ(CP(Complex(1.0, 2.0)) / CP(Complex(1.0, 2.0)), 1.0);
 }
 
