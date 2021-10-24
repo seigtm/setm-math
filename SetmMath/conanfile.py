@@ -1,4 +1,5 @@
 from conans import ConanFile, CMake
+from conans import tools
 
 
 class SetmMath(ConanFile):
@@ -29,10 +30,4 @@ class SetmMath(ConanFile):
 
     def package_info(self):
         self.cpp_info.includedirs = ["include", "include/setm"]
-        if self.settings.os == "Windows":
-            if self.settings.compiler == "Visual Studio":
-                self.cpp_info.libs = ["SetmMath.lib"]
-            else:
-                self.cpp_info.libs = ["SetmMath.dll"]
-        else:
-            self.cpp_info.libs = ["libSetmMath.so"]
+        self.cpp_info.libs = tools.collect_libs(self)

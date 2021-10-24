@@ -1,7 +1,5 @@
 #pragma once
 
-#include "setmexport.h"
-
 #include <cmath>
 
 #include <algorithm>
@@ -17,7 +15,7 @@
 namespace setm {
 
 template<class T>
-class SETM_API Polynomial {
+class Polynomial {
     // Polynomial class template parameter
     //  must support all of the operations listed below.
     static_assert(
@@ -170,7 +168,7 @@ public:
 
     // Comparison operators.
     bool operator==(const Polynomial &other) const noexcept {
-        return std::equal(coefficients.cbegin(), coefficients.cend(), other.coefficients.begin());
+        return coefficients == other.coefficients;
     }
 
     bool operator!=(const Polynomial &other) const noexcept {

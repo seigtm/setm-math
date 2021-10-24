@@ -70,11 +70,11 @@ Complex Complex::operator/(double value) const {
     return (result /= value);
 }
 
-Complex cos(const Complex &complex) {
+SETM_API Complex cos(const Complex &complex) {
     return { (std::cos(complex.real) * std::cosh(complex.img)), -(std::sin(complex.real) * std::sinh(complex.img)) };
 }
 
-Complex sin(const Complex &complex) {
+SETM_API Complex sin(const Complex &complex) {
     return { (std::sin(complex.real) * std::cosh(complex.img)), (std::cos(complex.real) * std::sinh(complex.img)) };
 }
 
@@ -95,20 +95,20 @@ bool Complex::operator!=(double other) const noexcept {
     return !(*this == Complex{ other });
 }
 
-bool operator==(double other, const Complex &complex) noexcept {
+SETM_API bool operator==(double other, const Complex &complex) noexcept {
     return (complex == other);
 }
 
-bool operator!=(double other, const Complex &complex) noexcept {
+SETM_API bool operator!=(double other, const Complex &complex) noexcept {
     return !(complex == other);
 }
 
-std::ostream &operator<<(std::ostream &out, const Complex &complex) {
+SETM_API std::ostream &operator<<(std::ostream &out, const Complex &complex) {
     out << '(' << complex.real << ", " << complex.img << ')';
     return out;
 }
 
-std::istream &operator>>(std::istream &in, Complex &complex) {
+SETM_API std::istream &operator>>(std::istream &in, Complex &complex) {
     in >> complex.real >> complex.img;
     return in;
 }
@@ -141,23 +141,23 @@ Complex Complex::operator+(const Complex &other) const {
     return (result += other);
 }
 
-Complex operator+(double value, const Complex &complex) {
+SETM_API Complex operator+(double value, const Complex &complex) {
     return (complex + value);
 }
 
-Complex operator-(double value, const Complex &complex) {
+SETM_API Complex operator-(double value, const Complex &complex) {
     return (Complex{ value } - complex);
 }
 
-Complex operator*(double value, const Complex &complex) {
+SETM_API Complex operator*(double value, const Complex &complex) {
     return (complex * value);
 }
 
-Complex operator/(double value, const Complex &complex) {
+SETM_API Complex operator/(double value, const Complex &complex) {
     return (Complex{ value } / complex);
 }
 
-Complex pow(const Complex &complex, double power) {
+SETM_API Complex pow(const Complex &complex, double power) {
     const double phi{ std::atan(complex.img / complex.real) };
     const double real{ std::cos(phi * power) };
     const double img{ std::sin(phi * power) };
@@ -166,11 +166,11 @@ Complex pow(const Complex &complex, double power) {
     return { modulusPower * real, modulusPower * img };
 }
 
-Complex nrt(const Complex &complex, double power) {
+SETM_API Complex nrt(const Complex &complex, double power) {
     return pow(complex, static_cast<double>(1.0 / power));
 }
 
-double abs(const Complex &complex) {
+SETM_API double abs(const Complex &complex) {
     return std::sqrt(complex.real * complex.real + complex.img * complex.img);
 }
 
