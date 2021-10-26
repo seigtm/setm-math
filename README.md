@@ -6,10 +6,10 @@ setm::math is a C++ library containing two math classes:
 
 1. [setm::Complex](https://github.com/seigtm/Complex)
    > In mathematics, a polynomial is an expression consisting of variables (also called indeterminates) and coefficients, that involves only the operations of addition, subtraction, multiplication, and non-negative integer exponentiation of variables.  
-   > (https://en.wikipedia.org/wiki/Polynomial)
+   > (https://en.wikipedia.org/wiki/Complex_number)
 2. [setm::Polynomial](https://github.com/seigtm/Polynomial)
    > In mathematics, a complex number is a number that can be expressed in the form a + bi, where a and b are real numbers, and i is a symbol called the imaginary unit, and satisfying the equation i^2 = -1.  
-   > (https://en.wikipedia.org/wiki/Complex_number)
+   > (https://en.wikipedia.org/wiki/Polynomial)
 
 ## Supported operators:
 
