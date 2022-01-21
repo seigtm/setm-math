@@ -77,7 +77,7 @@ std::cout << std::boolalpha << (-12.01 == Complex(-12.01)) << "\n";
 using namespace setm;
 
 int main() {
-    // minuend = 2.2x^4 + 15.1x^2 - 3.1x + 8.2
+    // minuend = 2.2x^4 + 15.1x^2 - 3.1x + 8.2.
     Polynomial<double> minuend{ 8.2, -3.1, 15.1, 0, 2.2 };
     // subtrahend = x^3 + 15x^2 + 6.1x + 4.2.
     Polynomial<double> subtrahend{ 4.2, 6.1, 15.0, 1 };
